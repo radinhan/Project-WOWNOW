@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>WOWNOW Entertainment</title>
+    <link rel="icon" href="/Images/wownow png.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="dist/output.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Link AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+
+    
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: white;
+        
+    }
+    body{
+        width: 100%;
+        height: auto;
+        background-color: rgb(29, 28, 28);
+        scroll-behavior: smooth;
+    }
+    
+    .navbar{
+        background-color: #202632;
+        height: 100px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+        position: sticky;
+       position: fixed;
+        top: 0;
+        z-index: 999;
+    }
+    .navbar .logo{
+        width: 20%;
+        height: 100%;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .navbar .nav{
+        width: 60%;
+        height: 100%;
+        /* background-color: #949fb5; */
+        display: flex;
+        justify-content: space-evenly;
+       
+    }
+    .navbar .nav ul{
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        margin-top: 15px;
+       
+    }
+    .nav li a{
+        font-size: 20px;
+        margin: 25px ;
+        text-decoration: none;
+        color: white;
+    }
+    .nav li a:hover{
+        color: #ff8400;
+        transition: all 0.7s ease-in-out;
+    }
+    .wownow{
+        padding: 10px 0;
+        border-radius: 10px;
+        background: linear-gradient(230deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); 
+    }
+  
+    .wownow:hover{
+        opacity: 75%;
+    }
+   .dropdown{
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    margin-right: -1200px;
+   
+    margin-top: 20px;
+   
+    
+   }
+   .hover-dropdown{
+ 
+    margin-top: 32px;
+    
+   }
+    .dropdown-menu{
+        width: 50px;
+        height: 85px;
+        background-color: #202632;
+        
+       
+   }
+   .dropdown-menu ul{
+    list-style-type: none;
+   }
+   .dropdown-menu li a{
+    text-decoration: none;
+   }
+ 
+   .dropdown .dropdown-menu{
+    display: grid;
+    place-items: center;
+  
+   }
+   .dropdown:hover .hover-dropdown{
+    display: block;
+   }
+   .hover-dropdown{
+    display: none;
+   }
+ 
+   .hambuger button{
+    font-size: 20px;
+    border: none;
+    background-color: #202632;
+    margin-left: 50px;
+    display: none;
+   }
+
+   .category{
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    z-index: 99999;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    margin-top: 3px;
+    display: none;
+    background-color: #202632c4;
+   }
+   .category ul li{
+    list-style-type: none;
+   }
+   .category ul li a{
+    text-decoration: none;
+    color: white;
+   }
+ /* Container */
+ .container{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    background-color: rgba(29, 28, 28, 0.962);
+    margin-top: 100px;
+   
+ }
+ .container .promote{
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    
+ }
+ .container .carousel-photo{
+    width: 100%;
+    
+  
+ }
+ .carousel-indicators button{
+   background-color: #ff8400;
+ }
+ .top-up{
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #ff8400;
+
+ }
+ .TOP-UP{
+    width: 200px;
+    height: 100%;
+    background-color: #ff8400;
+    border-radius: 0 10px 10px 0;
+    font-size: 20px;
+   
+ }
+ /* Menu games */
+ .row{
+    height: auto;
+    row-gap: 20px;
+    width: 1295px;
+    margin-left: 1px;
+   
+ }
+ @media (max-width: 767px) {
+    .logo{
+       position: absolute;
+        
+        margin-left: 170px;
+        margin-top: -30px; 
+    }
+    .hambuger button{
+        position: absolute;
+        margin-top: -38px;
+        margin-left: 10px;
+        font-size: 22px;
+        display: block;
+       
+    }
+    
+    .category ul li{
+       margin-top: 20px;
+    }
+    .navbar {
+    display: block;
+   
+    }
+    .nav ul li{ 
+        display: none;
+    }
+    .flag{
+       position: absolute;
+        margin-top: -40px;
+       margin-left: 290px;
+    }
+    .dropdown-menu{
+        display: block;
+        margin-left: -20px;
+    }
+   .row{
+    display: grid;
+    place-items: center;
+    width: auto;
+    row-gap: 10px;
+   }
+   .boxes{
+   margin: 20px auto;
+   }
+ }
+
+ .boxes{
+   border-radius: 15px;
+   overflow: hidden;
+   height: 300px;
+   width: 300px; 
+   position: relative;
+ }
+ .boxes img{
+   position: absolute;
+   left: 0;
+   border-radius: 10px;
+ }
+ .boxes .name-games{
+    width: 100%;
+    height: auto;
+    z-index: 999;
+    margin-top: 272px;
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+    background-color: rgba(29, 28, 28, 0.962);
+    border: 1px solid white;
+ }
+ /* footer */
+
+ .contact{
+    background-color: #202632;
+    column-gap: 20px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .contact .round1{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+   
+    display: grid;
+    place-items: center;
+ }
+ .round1:hover{
+    background-color: #ff8400;
+    transition: all 0.5s ease-in-out;
+ }
+ .round1 i{
+   font-size: 30px;
+ }
+ .copy-right{
+    height: 80px;
+    background-color: #ff8400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   text-transform: uppercase;
+ }
+</style>
+<body>
+    <div class="header ">
+        <div class="navbar">
+            <div class="logo"><a href="#top"><img src="/Images/wownow png.png" width="100px" height="100px" alt=""></a></div>
+            <div class="nav">
+                <ul>
+                   <div class="wownow "><li><a href="">WOWNOW Entertainment</a></li></div> 
+                    <li><a href="">SERVICE</a></li>
+                    <li><a href="">CONTACT US</a></li> 
+                </ul>
+               
+            </div>
+            <!-- Dropdown -->
+            <div class="flag dropdown  ">
+                <button type="button" id="national" class="btn dropdown-toggle mt-1 text-light active" data-bs-toggle="dropdown">
+                  <img src="/Images/usa logo.png" width="35px" alt="">  English
+                </button>
+               <div class="hover-dropdown bg-primary relative ">
+                <div class="dropdown-menu  d-flex flex-colum  " id="language">
+                    <ul>
+                        <li class="m-1 absolute mt-4" ><a class="text-sm text-white " href="">
+                             <img src="/Images/khmer logo.png"
+                            width="40px" height="40px" alt="">Khmer</a></li>
+                        <li class=" mt-1 m-2 absolute" ><a class="text-sm text-white" href="">
+                             <img class=" " src="/Images/usa logo.png"
+                            width="35px" height="35px" alt="">English</a></li>
+                    </ul>
+                </div>
+               </div>
+            </div>
+            <div class="hambuger absolute">
+                <button class="btn" id="button-navbar" type="button"><i class="fa-solid fa-list"></i></button>
+            </div>
+          
+       
+        </div>
+        <div class="category " id="navbar1">
+            <ul>
+               
+                 <li ><a href="">SERVICE</a></li>
+                 <li><a href="">CONTACT US</a></li> 
+                 <li><a href="">WOWNOW Entertainment</a></li>
+             </ul>
+        </div>
+        
+    </div>
+    <div class="container relative">
+
+        <div class="promote absolute p-1 ">
+            <marquee  behavior="scroll" direction="left" scrollamount="3">
+                <h5 class="text-white mt-2"> <i class="fa-solid fa-bell m-2"></i>យោងតាមការដកស្រង់ចេញគេហទំព័រ Businessinsider នៅ​ខាងក្រោម​នេះ គឹជាសញ្ញាទាំង៣ 
+                    ដែលលោកអ្នកត្រូវគិតពិចារណាមុនសម្រេចចិត្តបង់រំលសផ្ទះ។</h5>
+            </marquee>
+        </div> 
+
+        <!-- Slider photo -->
+        <div class="carousel-photo">
+            <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                <!-- Indicators/dots -->
+                <div class="carousel-indicators ">
+                   
+                  <button  type="button " data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                  <button  type="button"  data-bs-target="#demo" data-bs-slide-to="1"></button>
+                  <button  type="button"  data-bs-target="#demo" data-bs-slide-to="2"></button>
+                 
+                </div>
+                
+                <!-- The slideshow/carousel -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/Images/slider1.png" alt="" class="d-block" style="width:100%">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/Images/slider2.png" alt="" class="d-block" style="width:100%">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/Images/slider3.png" alt="" class="d-block" style="width:100%">
+                  </div>
+                 
+                </div>
+                
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#demo"
+                 data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#demo"
+                 data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+              </div>
+              
+        </div>
+        <br>
+
+        <!-- TOP-UP -->
+        <div class="top-up relative">
+            <div class="TOP-UP absolute d-flex justify-content-center align-items-center"><strong class="">TOP UP GAMES</strong> </div>
+        </div>
+
+        <div class="row col-sm-3 col-md-4 col-lg-6 relative mt-3 d-flex justify-content-between  " >
+           <!-- Row 1 (jour dek) -->
+                <div class="boxes col-sm-3 absolute " data-aos="fade-right">
+                   <a href="/Project3/TopUp.html" class="text-decoration-none"> <img class="" src="/Images/mobile legend.png" width="100%" height="90%" alt="">  
+                    <div class="name-games col-sm-3"><h5 >Mobile Legend BangBang</h5></div></a>
+                </div>
+
+                <div class="boxes col-sm-3 absolute " data-aos="fade-right">
+                    <img src="/Images/pubg.jpg" width="100%" height="90%" alt="">
+                    <div class="name-games col-sm-3"><h5>PUBG Mobile</h5></div>
+                </div>
+
+                <div class="boxes col-sm-3 absolute"  data-aos="fade-left">
+                    <img src="/Images/coc.png" width="100%" height="90%" alt="">
+                    <div class="name-games col-sm-3"><h5>Clash of Clan</h5></div>
+                </div>
+                <div class="boxes col-sm-3 absolute "  data-aos="fade-left">
+                    <img src="/Images/free fire.png" width="100%" height="90%" alt="">
+                    <div class="name-games col-sm-3"><h5>FreeFire Mobile</h5></div>
+                </div>  
+                <div class="boxes col-sm-3 absolute " data-aos="fade-right"> 
+                    <img src="/Images/heyday.png" width="100%" height="90%" alt="">
+                    <div class="name-games col-sm-3"> <h5>Hey Day</h5></div>
+                </div>
+                <div class="boxes col-sm-3 absolute " data-aos="fade-right">
+                    <img src="/Images/bigo.png" width="100%" height="90%" alt="">
+                    <div class="name-games col-sm-3"> <h5>BIGO Live Diamonds</h5></div>
+                </div>
+                <div class="boxes col-sm-3 absolute "  data-aos="fade-left">
+                    <img src="/Images/valorant.jpg" width="100%" height="90%" alt="">
+                    <div class="name-games col-sm-3"> <h5>Valorants RIOT</h5></div>
+                </div>
+                <div class="boxes col-sm-3 absolute "  data-aos="fade-left">
+                    <img src="/Images/clash royale.jpg" width="100%" height="90%" alt="">
+                    <div class="name-games col-sm-3"> <h5>Clash Royale</h5></div>
+                </div>  
+              
+            
+        </div>
+
+        <div class="row col-sm-3 col-md-4 col-lg-6 relative mt-5 d-flex justify-content-between  " >
+            <!-- Row 2 (jour dek) -->
+                 <div class="boxes col-sm-3 absolute " data-aos="fade-right">
+                    <img src="/Images/teen.png" width="100%" height="90%" alt="">
+                     <div class="name-games col-sm-3"> <h5>Clash Royale</h5>
+                </div>
+                 </div>
+                 <div class="boxes col-sm-3 absolute " data-aos="fade-right">
+                    <img src="/Images/callplay.png" width="100%" height="90%" alt="">
+                    <div class="name-games col-sm-3"> <h5>Clash Royale</h5>
+               </div>
+                 </div>
+                 <div class="boxes col-sm-3 absolute " data-aos="fade-left">
+                    <img src="/Images/ludo.png" width="100%" height="90%" alt="">
+                     <div class="name-games col-sm-3"> <h5>Clash Royale</h5>
+                </div>
+                 </div>
+                  <div class="boxes col-sm-3 absolute" data-aos="fade-left" >
+                    <img src="/Images/mllive.png" width="100%" height="90%" alt="">
+                     <div class="name-games col-sm-3"> <h5>Clash Royale</h5>
+                </div>
+                  </div>  
+                 
+             
+         </div>
+    </div> <br> <br>
+    <div class="contact w-100">
+
+       <div class="round1"><a href="https://www.facebook.com/hann.radin.1">
+        <i class="fa-brands fa-facebook"></i></a></div>
+       <div class="round1"><a href="https://instagram.com/radin_han?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr">
+        <i class="fa-brands fa-instagram"></i></a></div>
+       <div class="round1"><a href="https://t.me/Alexong25">
+        <i class="fa-brands fa-telegram"></i></a></div>
+       <div class="round1"><a href="https://www.tiktok.com/@alex24052020">
+        <i class="fa-brands fa-tiktok"></i></a></div>
+
+    </div>
+    <div class="copy-right w-100">
+        <h5>@This page has completed 18/10/2023</h5>
+    </div>
+  
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+      $("#button-navbar").click(function(){
+        $("#navbar1").slideToggle("slow");
+      })
+
+      $("#national").click(function(){
+        $("#language").slideToggle("slow");
+      })
+    });
+
+    
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({duration: 1000});
+</script>
